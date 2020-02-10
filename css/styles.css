@@ -1,1 +1,24 @@
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import "status-bar.css";
+@import "header.css";
+@import "nav-bar.css";
+@import "friend.css";
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    padding:10px 20px;
+    color: #020202;
+    font-family: 'Open Sans'-apple-system, BlinkMacSystemFont, 'Segoe UI', 
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    height: 1000000px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
