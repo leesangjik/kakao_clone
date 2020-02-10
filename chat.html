@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <title>Chat KaKao Clone</title>
+</head>
+
+<body>
+    <div class="status-bar">
+        <div class="status-bar__column">
+            <span class="status-bar__clock">18:38</span>
+        </div>
+        <div class="status-bar__column">
+            <i class="fas fa-clock"></i>
+            <i class="fas fa-volume-mute"></i>
+            <i class="fas fa-wifi"></i>
+            <span class="status-bar__battery-level">100%</span>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+    <header class="header">
+        <a href="index.html">
+            <i class="fas fa-arrow-left fa-2x"></i>
+        </a>
+        <div class="header__header-column">
+            <h1 class="header__title">Best Friend</h1>
+        </div>
+        <div class="header__header-column">
+            <span class="header__icon">
+                <i class="fas fa-search"></i>
+            </span>
+            <div class="heaer__icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <main class="chat">
+        <ul class="chat__messages">
+            <span class="chat__timestamp">Friday, january11, 2019</span>
+            <li class="incoming-message message">
+                <img src="images/donguk.jpg" class="g-avatar message__avatar">
+                <div class="message__content">
+                    <span class="message__author">Best Friend</span>
+                    <div class="message__buble">
+                        Congrats I love you!
+                    </div>
+                </div>
+                <span class="message__timestamp"></span>
+            </li>
+            <li class="incoming-message message">
+                <span class="message__timestamp"></span>
+                <div class="message__content">
+                    <div class="message__buble">
+                        Thank you!
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <div class="chat__write">
+        <div class="chat__write-column">
+            <i class="far fa-plus-square"></i>
+        </div>
+        <div class="chat__write-column">
+            <input type="text" placeholder="Send message" class="chat__write-input" />
+        </div>
+        <div class="chat__write-column">
+            <span class="chat__write--icon">
+                <i class="far fa-smile-wink"></i>
+            </span>
+            <span class="chat__write--icon">
+                <i class="fas fa-microphone"></i>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
