@@ -1,0 +1,1114 @@
+Delivered-To: sangjik9206@gmail.com
+Received: by 2002:ad5:47d1:0:0:0:0:0 with SMTP id p17csp3270723imu;
+        Sun, 9 Feb 2020 17:32:52 -0800 (PST)
+X-Received: by 2002:a05:6638:81:: with SMTP id v1mr8139553jao.143.1581298372561;
+        Sun, 09 Feb 2020 17:32:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1581298372; cv=none;
+        d=google.com; s=arc-20160816;
+        b=HAFWT9Eih6y0qU4BGbqAOHlV5/8vapgUhC0Ac0kmbVvE5lynMEYfrUgGggw3TV1S9P
+         KiVfoCgiDCqCmv7sfpFig3R98rEBf0QcL81NhOkHwX9mrdLumC5xCmvrqNbVWQG8xoca
+         Je6qkrcr6hv6DShVoTR8JxEBgfopgPIr4X1SzLWdaKtuhLmVRdjUQxFw6lGEg/9Yn8ea
+         bJdBWYodbfdJd+mwcFrtSkC0Oi5bo3KgwTKdIQhl0FD11t4YUZAY+MknHoRdgAle+xyx
+         HUN8huGFcVky1NzPxnXlI8QHTnvh0c3Sn8rLty0jI864oYu3UntrL4XSzg5c//BzTCE8
+         8oEw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:date:message-id:mime-version:dkim-signature;
+        bh=Ug/xx3I6aRlL12Xy1TKVCi8hWSMGTbsehi8TJkS5wig=;
+        b=JdBM00yhMRp/2CsP87/XI63ftqvJ8Dx4y++7gFH4Ud7ySxWoP61MYbEMhBtaJjb3v+
+         G9Vg3GDSD4f//UmNKhbX+HMW0/60Nw6CqOFjjVFZYdMroH1R5yYxQb6ueYTsdVvSKhfq
+         M56UiDyrG1RcWSe2yOXgmEnR2V+TPnfAWISo1XRoG3S93gdQ2HeGIrhvfyta3ULD6zWW
+         ixwFG2dgO1CMvYFnLkF+Gab6jdfYscLkc0wMrsF3MgUH+kLNWhcSusvUMxitjUMlPvPg
+         J7a5NcCxPXgmAwZllR8TNg6Vwej7gGfFwxldzkXMB6adGnmnWSRKp5FnSTbbjndzeI0+
+         Y0yQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="lBv/1Ndd";
+       spf=pass (google.com: domain of 3xljaxhykacugpsnt-sfdfjqut-opsfqmzhpphmf.dpn@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3xLJAXhYKACUGPSNT-SFDFJQUT-OPSFQMZHPPHMF.DPN@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3xLJAXhYKACUGPSNT-SFDFJQUT-OPSFQMZHPPHMF.DPN@trix.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id z16sor4374668ill.98.2020.02.09.17.32.52
+        for <sangjik9206@gmail.com>
+        (Google Transport Security);
+        Sun, 09 Feb 2020 17:32:52 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3xljaxhykacugpsnt-sfdfjqut-opsfqmzhpphmf.dpn@trix.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20161025 header.b="lBv/1Ndd";
+       spf=pass (google.com: domain of 3xljaxhykacugpsnt-sfdfjqut-opsfqmzhpphmf.dpn@trix.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3xLJAXhYKACUGPSNT-SFDFJQUT-OPSFQMZHPPHMF.DPN@trix.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20161025;
+        h=mime-version:message-id:date:subject:from:to;
+        bh=Ug/xx3I6aRlL12Xy1TKVCi8hWSMGTbsehi8TJkS5wig=;
+        b=lBv/1NddHWGm0+a0h+QjUnEuyHf9sr6IeRLQIaFJq+32TAo4VT9Mw0Az71vyBmL7QC
+         Zx9nQ1C25XUfeNUFZAaiATRohauAO9uoJ8PlUW2NgS1OcXbqpR40QeMteAlzSqUes3zW
+         EYH6lnLhv+2M9xlxQbOB27JU0kF609X6ykBav/aQzqS82R1E04bAtkpAES9WTkAquZi8
+         3575IM3AzqIBza1HJljctMfe5AECnC9irnr78p0zB/ttZ21gGxFGq4dKiF9I9pzYb/j8
+         DaEChqhNEqSM1ngBecTS5rx845WOj2qA0cysl1I8fUyFwo8+c5uU1wETvnJ004Xz/h9O
+         6zPA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:message-id:date:subject:from:to;
+        bh=Ug/xx3I6aRlL12Xy1TKVCi8hWSMGTbsehi8TJkS5wig=;
+        b=JC7N4P0iUNtLF+wtndLEjQgioNsX5CgisgOcERKQFos0sEgunrQ9d8690OJEoKrRtw
+         Jhxl2Xzti4fa2CRZg9Xlk8JS66fDRAdcBYxGM3oNQUjUMaJHhXGttm5DtDXetGqSZ+04
+         qm7GoSqpxAj7BIOHOyg2zIzk9xIf0tVoYAlq1Os+DejTqYGQCJCI87DE98c9PY+hsfx+
+         o+BRZazb9IojUIWRrLrdQalm/mLVs4Hnyp2FtP9+Z3yF6YW3P1q/bTlwm7qBIUK1Ok1L
+         ijk+b23FagfvhRUmjTKXQ48RNH8n6A2tV0W8G3/i83W028IBaCMPUe/IyPfmeq7KosJm
+         KFlA==
+X-Gm-Message-State: APjAAAW0QvAlNzm/Z01sC0FBkKVQI0YTwwVRtCojnBvVyt4Im48eOps8
+	L9fa/O5lXy9K6O+wVOwD/0IoyzPNBOn3F/rIA4Jy9Q==
+X-Google-Smtp-Source: APXvYqwPHdEAJrMMuP0rY5FMXP7ug1xnQW0bxcdaVgw1ClpPDlpYO+uB7m5ddE0x2sDJfyEDQpfAzZc934jqcF95BPxV8g==
+MIME-Version: 1.0
+X-Received: by 2002:a92:5c5d:: with SMTP id q90mr7378735ilb.63.1581298372031;
+ Sun, 09 Feb 2020 17:32:52 -0800 (PST)
+Message-ID: <000000000000bfc2fe059e2eb735@google.com>
+Date: Mon, 10 Feb 2020 01:32:52 +0000
+Subject: Kokoa: Day One
+From: =?UTF-8?B?R29vZ2xlIOyEpOusuOyngA==?= <forms-receipts-noreply@google.com>
+To: sangjik9206@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000bfc2ef059e2eb732"
+
+--000000000000bfc2ef059e2eb732
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIOyEpOusuOyngA0KDQoNCktva29hOiBEYXkgT25l7J2EKOulvCkg7J6R7ISx7ZW0IOyj
+vOyFlOyEnCDqsJDsgqztlanri4jri6QuDQoNCg0KDQoNCg0K7IKs7Jqp7J6Q66Gc67aA7YSwIOuL
+pOydjOqzvCDqsJnsnYAg66mU7Iuc7KeA66W8IOuwm+yVmOyKteuLiOuLpC4NCg0KDQoNCg0KS29r
+b2E6IERheSBPbmUNCg0KVGhpcyBxdWl6IGlzIGJhc2VkIG9uIHRoZSBmaXJzdCBzZWN0aW9uIG5h
+bWVkOiAiW01vZHVsZSAjMV0gVGhlIHRvb2xzIG9mIGEgIA0KV2ViIERldmVsb3BlciINCg0KKiDt
+gLTspojripQg64uoIDHtmozrp4wg7J2R7ZWgIOyImCDsnojsirXri4jri6QuDQoqIO2AtOymiCDq
+srDqs7zripQg7J286rSEIOydteydvCDsmKTtm4Qg7J2066mU7J2866GcIOyVjOugpOuTnOumveuL
+iOuLpC4NCg0KDQrsnbTrqZTsnbwg7KO87IaMICoNCg0Kc2FuZ2ppazkyMDZAZ21haWwuY29tDQoN
+Cg0KRG8geW91IG5lZWQgVmlzdWFsIFN0dWRpbyBDb2RlIHRvIG1ha2Ugd2Vic2l0ZXM/ICoNCg0K
+DQpZZXMsIGl0J3Mgd2hlcmUgSSB3cml0ZSB0aGUgY29kZS4NCk5vLCBpdCBkb2VzIG5vdCBtYXR0
+ZXIgYmVjYXVzZSBjb2RlIGlzIGp1c3QgdGV4dC4NCg0KDQpXaGF0IGlzIEdpdD8gKg0KDQoNCkdp
+dCBpcyBhIHZlcnNpb24gY29udHJvbCBzeXN0ZW0uDQpHaXQgaXMgdGhlIHNhbWUgYXMgR2l0aHVi
+Lg0KR2l0IGlzIGEgc3lzdGVtIHRvIG1ha2UgYXV0b21hdGljIGJhY2t1cHMuDQoNCg0KV2hhdCBk
+b2VzICdMb2NhbCBWZXJzaW9uIENvbnRyb2wnIG1lYW4gKg0KDQoNCkl0IG1lYW5zIHRoYXQgZXZl
+cnlib2R5IGNhbiBzZWUgb3VyIGxvY2FsIGZpbGVzLg0KSXQgbWVhbnMgdGhhdCB3ZSBoYXZlIGFs
+bCB0aGUgaGlzdG9yeSBvZiBvdXIgZmlsZXMgc2F2ZWQgaW4gb3VyIGNvbXB1dGVyLg0KSXQgbWVh
+bnMgdGhhdCB3ZSBpbnN0YWxsZWQgR2l0IGluIG91ciBtYWNoaW5lLg0KDQoNCldoYXQgaXMgJ1Jl
+bW90ZSBWZXJzaW9uIENvbnRyb2wnPyAqDQoNCg0KSXMgd2hlbiBteSBmaWxlcyBhcmUgaW4gc29t
+ZW9uZSBlbHNlJ3MgY29tcHV0ZXIuDQpJcyB3aGVuIEkgc2hhcmUgbXkgZmlsZSBoaXN0b3J5IHdp
+dGggbXkgZnJpZW5kcy4NCklzIHdoZW4gdGhlIGZpbGUgaGlzdG9yeSBpcyBhbHNvIHVwbG9hZGVk
+IHRvIGFub3RoZXIgR2l0IFNlcnZlci4NCg0KDQpXaGF0IGlzIGEgcmVwb3NpdG9yeT8gKg0KDQoN
+Ckl0J3MgYSBmb2xkZXIgd2l0aCBteSBmaWxlcyBvbiBpdA0KSXQncyBhIGZvbGRlciB3aXRoIG15
+IGZpbGVzIG9uIGl0IGJlaW5nIHdhdGNoZWQgYnkgR2l0DQpJdCdzIGEgZmlsZSB3YXRjaGVkIGJ5
+IEdpdA0KDQoNCldoYXQgaXMgYSBjb21taXQ/ICoNCg0KDQpBIHJlY29yZCBvbiB0aGUgR2l0IGhp
+c3Rvcnkgc2lnbmFsaW5nIGEgY2hhbmdlIG9uIHRoZSBjb2RlLg0KQW4gYXV0b21hdGljIGJhY2t1
+cCB0aGF0IGhhcHBlbnMgd2hlbiB3ZSBhZGQgYSBmaWxlLg0KQSBjb21tZW50IHdlIGhhdmUgdG8g
+d3JpdGUgZXZlcnkgdGltZSB3ZSBzYXZlIGEgZmlsZS4NCg0KDQpXaGF0IGlzIGEgYnJhbmNoIGlu
+IEdpdD8gKg0KDQoNCkEgd29vZGVuIHN0aWNrIHdoZXJlIHdlIHB1dCB0aGUgY29tbWl0cw0KQSBk
+aWZmZXJlbnQgcmVwb3NpdG9yeQ0KSXMgYSBjb3B5IG9mIHRoZSBjb2RlIGZyb20gdGhlIG1hc3Rl
+ciBicmFuY2gNCg0KDQpXaHkgc2hvdWxkIHdlIHVzZSBicmFuY2hlcz8gKg0KDQoNCkJlY2F1c2Ug
+aXQgaXMgdGhlIG9ubHkgd2F5IHRvIHNoYXJlIGNvZGUgYmV0d2VlbiBjb3dvcmtlcnMNCkJlY2F1
+c2Ugd2UgY2FuIHdvcmsgb24gb3RoZXIgdGhpbmdzIHdpdGhvdXQgYnJlYWtpbmcgdGhlIHN0YWJs
+ZSBjb2RlDQpCZWNhdXNlIHdlIG5lZWQgdG8gY29tbWl0IHRoZSBjb2RlDQoNCg0KR2l0IGlzIHRo
+ZSBzYW1lIGFzIEdpdGh1YiAqDQoNCg0KVHJ1ZQ0KRmFsc2UNCg0KDQpXaGF0IGlzIHRoZSBkaWZm
+ZXJlbmNlIGJldHdlZW4gR2l0IGFuZCBHaXRodWIgKg0KDQoNClRoZXJlIGlzIG5vIGRpZmZlcmVu
+Y2UNCkdpdCBpcyB3aGVyZSB3ZSBwdXQgb3VyIGZpbGVzLCBHaXRodWIgaXMgd2hlcmUgd2Ugc2hh
+cmUgdGhlbQ0KR2l0IGlzIHRoZSB2ZXJzaW9uIGNvbnRyb2wgc3lzdGVtIGFuZCBHaXRodWIgaXMg
+YSByZW1vdGUgdmVyc2lvbiBjb250cm9sICANCndlYnNpdGUNCg0KDQpXaGF0IGlzIEdpdGh1YiBE
+ZXNrdG9wIChHRCk/ICoNCg0KDQpHRCBpcyB0aGUgb25seSB3YXkgdG8gd29yayB3aXRoIEdpdA0K
+R0QgaXMgYSBHaXQgY2xpZW50IHRvIHdvcmsgd2l0aCBHaXQgKyBHaXRodWIgVmlzdWFseQ0KR0Qg
+aXMgYSB2ZXJzaW9uIGNvbnRyb2wgc3lzdGVtDQoNCg0KSFRNTCBpcyBhIHByb2dyYW1taW5nIGxh
+bmd1YWdlICoNCg0KDQpUcnVlDQpGYWxzZQ0KDQoNCkNTUyBpcyBhIHByb2dyYW1taW5nIGxhbmd1
+YWdlICoNCg0KDQpUcnVlDQpGYWxzZQ0KDQoNCldoYXQgaXMgSFRNTCBmb3I/ICoNCg0KDQpIVE1M
+IHRlbGxzIHRoZSBicm93c2VyIGhvdyB0aGUgZWxlbWVudHMgbG9vay4NCkhUTUwgdGVsbHMgdGhl
+IHVzZXIgaG93IHRoZSBlbGVtZW50cyBsb29rLg0KSFRNTCB0ZWxscyB0aGUgYnJvd3NlciB3aGF0
+IHRoZSBlbGVtZW50cyBhcmUuDQoNCg0KV2hhdCBpcyBDU1MgZm9yPyAqDQoNCg0KQ1NTIHRlbGxz
+IHRoZSBicm93c2VyIHdoYXQgdGhlIGVsZW1lbnRzIGFyZS4NCkNTUyB0ZWxscyB0aGUgYnJvd3Nl
+ciBob3cgdGhlIGVsZW1lbnRzIGxvb2suDQpDU1MgdGVsbHMgdGhlIGJyb3dzZXIgaG93IHRoZSBl
+bGVtZW50cyBiZWhhdmUuDQoNCg0KQ2FuIEkgY2hhbmdlIHRoZSBjb2xvciBvZiB0aGUgZWxlbWVu
+dHMgdXNpbmcgSFRNTD8gKg0KDQoNClllcw0KTm8NCg0KDQpDYW4gSSBjcmVhdGUgYSBsaW5rIHVz
+aW5nIENTUz8gKg0KDQoNClllcw0KTm8NCg0KDQpXaGF0IGlzIEhUTUw/ICoNCg0KDQpBIG1hcmt1
+cCBsYW5ndWFnZS4NCkEgc3R5bGUgbGFuZ3VhZ2UuDQpBIHByb2dyYW1taW5nIGxhbmd1YWdlLg0K
+DQoNCldoYXQgaXMgQ1NTPyAqDQoNCg0KQSBtYXJrdXAgbGFuZ3VhZ2UuDQpBIHN0eWxpbmcgbGFu
+Z3VhZ2UuDQpBIHByb2dyYW1taW5nIGxhbmd1YWdlLg0KDQoNCuyYpOuKmCDqs7zsoJzripQg7Ja0
+65ag7IWo64KY7JqUPyDtlLzrk5zrsLEg67aA7YOB65Oc66Ck7JqUIQ0KDQoNCk9uIGZpcnN0IHF1
+ZXN0aW9uLCBJIG5lZWQgdnNjIHRoYXQgbWFrZSBteSBjb2RlIHByZXR0eSBidXQgaXQncyBub3Qg
+IA0KbmVjZXNzYXJ5IGJlY2F1ZXNlIHdlYnNpdGUgaXMganVzdCB0ZXh0IFRoYXQncyB3aHkgeW91
+IGNhbiBjb2RlIGl0IHdpdGggYSAgDQptZW1vIHBhZC4gcmlnaHQ/IEkgbWVhbiAuLi4gSSBkb24n
+dCB0aGluayB0aGF0J3Mgd2hhdCB0aGUgcXVlc3Rpb24gIA0Kc2F5cy4uLnNvLi5pIGRvbid0IGtu
+b3cgd2hhdCB0byBjaG9vc2UgYnV0IHRoZSBxdWVzdGlvbiBzYXlzICdEbyB1IG5lZWQgdnNjICAN
+CnRvIG1ha2Ugd2Vic2l0ZScgYW5kIHRoZW4gaSBzYXkgWUVTISEhISEhISEhTXkgY29kZSBpcyB1
+Z2x5IHNvIGkgbmVlZCB2c2MgIA0KaGFoYWhhaGFoYWhhaC4uLi4gb2ggYnkgdGhlIHdheSAsIEkg
+bmVlZCBtb3JlIGluZm9ybWF0aW9uIGFib3V0IGxvY2FsICANCnZlcnNpb24gY29udHJvbCwgcmVt
+b3RlIHZlcnNpb24gY29udHJvbA0KDQoNCl9ET05UX1RPVUNIXyAqDQoNCg0KTVRnM01qZ3dNRUF3
+TURFd01FQXdNREU9DQoNCg0K64KY66eM7J2YIEdvb2dsZSDshKTrrLjsp4Ag66eM65Ok6riwDQoN
+Cg0K
+--000000000000bfc2ef059e2eb732
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><body style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; margin=
+: 0; padding: 0; height: 100%; width: 100%;"><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"background-color:rgb(252,206,2);" width=
+=3D"100%" role=3D"presentation"><tbody><tr height=3D"64px"><td style=3D"pad=
+ding-left: 24px"><img alt=3D"Google =EC=84=A4=EB=AC=B8=EC=A7=80" height=3D"=
+26px" style=3D"display: inline-block; margin: 0; vertical-align: middle;" w=
+idth=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_logo_=
+lockup_black_2x.png"></td></tr></tbody></table><div style=3D"padding: 24px;=
+ background-color:rgb(254,245,204)"><div align=3D"center" style=3D"backgrou=
+nd-color: #fff; border-bottom: 1px solid #e0e0e0; margin: 0 auto; max-width=
+: 624px; min-width: 154px; padding: 0 24px;"><table align=3D"center" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"background-color: #fff;" width=3D"10=
+0%" role=3D"presentation"><tbody><tr height=3D"24px"><td></td></tr><tr><td>=
+<div style=3D"font-size: 13px; line-height: 18px; color: #424242; font-weig=
+ht: 700"><a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSduZ8eyBkAk5p0=
+mybSBIGuFw0mlFbLYkz5Wx-MdKcLcxMN8ZA/viewform?embedded=3Dtrue&amp;usp=3Dmail=
+_form_link">Kokoa: Day One</a>=EC=9D=84(=EB=A5=BC) =EC=9E=91=EC=84=B1=ED=95=
+=B4 =EC=A3=BC=EC=85=94=EC=84=9C =EA=B0=90=EC=82=AC=ED=95=A9=EB=8B=88=EB=8B=
+=A4.</div></td></tr><tr height=3D"12px"></tr><tr><td><div style=3D"font-siz=
+e: 13px; line-height: 18px; color: #424242;">=EC=82=AC=EC=9A=A9=EC=9E=90=EB=
+=A1=9C=EB=B6=80=ED=84=B0 =EB=8B=A4=EC=9D=8C=EA=B3=BC =EA=B0=99=EC=9D=80 =EB=
+=A9=94=EC=8B=9C=EC=A7=80=EB=A5=BC =EB=B0=9B=EC=95=98=EC=8A=B5=EB=8B=88=EB=
+=8B=A4.</div></td></tr><tr><td><div class=3D"ss-form-container" style=3D"">=
+<div class=3D"ss-form-heading" style=3D""><h1 class=3D"ss-form-title" dir=
+=3D"ltr" style=3D"margin:.67em 0;">Kokoa: Day One</h1>
+<div class=3D"ss-form-desc ss-no-ignore-whitespace" style=3D"font:inherit;w=
+idth:99%;margin:0 0 1em;white-space:pre-wrap;word-wrap:break-word;">This qu=
+iz is based on the first section named: &quot;[Module #1] The tools of a We=
+b Developer&quot;<br><br>* =ED=80=B4=EC=A6=88=EB=8A=94 =EB=8B=A8 1=ED=9A=8C=
+=EB=A7=8C =EC=9D=91=ED=95=A0 =EC=88=98 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4=
+.<br>* =ED=80=B4=EC=A6=88 =EA=B2=B0=EA=B3=BC=EB=8A=94 =EC=9D=BC=EA=B4=84 =
+=EC=9D=B5=EC=9D=BC =EC=98=A4=ED=9B=84 =EC=9D=B4=EB=A9=94=EC=9D=BC=EB=A1=9C =
+=EC=95=8C=EB=A0=A4=EB=93=9C=EB=A6=BD=EB=8B=88=EB=8B=A4.</div>
+</div>
+<div class=3D"ss-form" style=3D""><form action=3D"" method=3D"GET" id=3D"ss=
+-form" style=3D""><br>
+<div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-text" style=3D"margi=
+n:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertic=
+al-align:middle;margin-left:0;margin-top:0;max-width:100%;"><label class=3D=
+"ss-q-item-label" for=3D"emailAddress" style=3D""><div class=3D"ss-q-title"=
+ style=3D"display:block;font-weight:bold;margin-top:.83em;margin-bottom:.83=
+em;">=EC=9D=B4=EB=A9=94=EC=9D=BC =EC=A3=BC=EC=86=8C
+<label for=3D"emailAddress" aria-label=3D"(=ED=95=84=EC=88=98 =EC=9E=85=EB=
+=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div></label>
+<div class=3D"ss-q-text ss-printable-text-line" dir=3D"auto" style=3D"backg=
+round-color:#eee;max-width:90%;border:1px solid #c0c0c0;padding:5px;white-s=
+pace:pre-wrap;color:#545454;width:70%;">sangjik9206@gmail.com</div>
+
+
+</div></div></div>
+<div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_193574675" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Do you need Visual Studio Code to make websites?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Do you need Visu=
+al Studio Code to make websites?  " style=3D"list-style:none;padding:0;marg=
+in:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+366340186" disabled checked value=3D"Yes, it&#39;s where I write the code."=
+ id=3D"group_366340186_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D=
+"Yes, it&#39;s where I write the code." aria-required=3D"true" style=3D""><=
+/span>
+<span class=3D"ss-choice-label" style=3D"">Yes, it&#39;s where I write the =
+code.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+366340186" disabled value=3D"No, it does not matter because code is just te=
+xt." id=3D"group_366340186_2" role=3D"radio" class=3D"ss-q-radio" aria-labe=
+l=3D"No, it does not matter because code is just text." aria-required=3D"tr=
+ue" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">No, it does not matter because c=
+ode is just text.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1310273467" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is Git?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is Git?  " =
+style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choice=
+-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+481260005" disabled checked value=3D"Git is a version control system." id=
+=3D"group_481260005_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Gi=
+t is a version control system." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Git is a version control system.=
+</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+481260005" disabled value=3D"Git is the same as Github." id=3D"group_481260=
+005_2" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Git is the same as=
+ Github." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Git is the same as Github.</span=
+>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+481260005" disabled value=3D"Git is a system to make automatic backups." id=
+=3D"group_481260005_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Gi=
+t is a system to make automatic backups." aria-required=3D"true" style=3D""=
+></span>
+<span class=3D"ss-choice-label" style=3D"">Git is a system to make automati=
+c backups.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_335959188" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">What does &#39;Local Version Control&#39; mean
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What does &#39;L=
+ocal Version Control&#39; mean  " style=3D"list-style:none;padding:0;margin=
+:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3e=
+m;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+929575587" disabled value=3D"It means that everybody can see our local file=
+s." id=3D"group_929575587_1" role=3D"radio" class=3D"ss-q-radio" aria-label=
+=3D"It means that everybody can see our local files." aria-required=3D"true=
+" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">It means that everybody can see =
+our local files.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+929575587" disabled checked value=3D"It means that we have all the history =
+of our files saved in our computer." id=3D"group_929575587_2" role=3D"radio=
+" class=3D"ss-q-radio" aria-label=3D"It means that we have all the history =
+of our files saved in our computer." aria-required=3D"true" style=3D""></sp=
+an>
+<span class=3D"ss-choice-label" style=3D"">It means that we have all the hi=
+story of our files saved in our computer.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+929575587" disabled value=3D"It means that we installed Git in our machine.=
+" id=3D"group_929575587_3" role=3D"radio" class=3D"ss-q-radio" aria-label=
+=3D"It means that we installed Git in our machine." aria-required=3D"true" =
+style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">It means that we installed Git i=
+n our machine.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1666460823" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is &#39;Remote Version Control&#39;?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is &#39;Rem=
+ote Version Control&#39;?  " style=3D"list-style:none;padding:0;margin:.5em=
+ 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;pad=
+ding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+191983" disabled checked value=3D"Is when my files are in someone else&#39;=
+s computer." id=3D"group_191983_1" role=3D"radio" class=3D"ss-q-radio" aria=
+-label=3D"Is when my files are in someone else&#39;s computer." aria-requir=
+ed=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Is when my files are in someone =
+else&#39;s computer.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+191983" disabled value=3D"Is when I share my file history with my friends."=
+ id=3D"group_191983_2" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Is=
+ when I share my file history with my friends." aria-required=3D"true" styl=
+e=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Is when I share my file history =
+with my friends.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+191983" disabled value=3D"Is when the file history is also uploaded to anot=
+her Git Server." id=3D"group_191983_3" role=3D"radio" class=3D"ss-q-radio" =
+aria-label=3D"Is when the file history is also uploaded to another Git Serv=
+er." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Is when the file history is also=
+ uploaded to another Git Server.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_713117937" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">What is a repository?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is a reposi=
+tory?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"=
+ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1147876882" disabled value=3D"It&#39;s a folder with my files on it" id=3D"=
+group_1147876882_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"It&#3=
+9;s a folder with my files on it" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">It&#39;s a folder with my files =
+on it</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1147876882" disabled checked value=3D"It&#39;s a folder with my files on it=
+ being watched by Git" id=3D"group_1147876882_2" role=3D"radio" class=3D"ss=
+-q-radio" aria-label=3D"It&#39;s a folder with my files on it being watched=
+ by Git" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">It&#39;s a folder with my files =
+on it being watched by Git</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1147876882" disabled value=3D"It&#39;s a file watched by Git" id=3D"group_1=
+147876882_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"It&#39;s a f=
+ile watched by Git" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">It&#39;s a file watched by Git</=
+span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1518431077" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is a commit?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is a commit=
+?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-c=
+hoice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1307639092" disabled checked value=3D"A record on the Git history signaling=
+ a change on the code." id=3D"group_1307639092_1" role=3D"radio" class=3D"s=
+s-q-radio" aria-label=3D"A record on the Git history signaling a change on =
+the code." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A record on the Git history sign=
+aling a change on the code.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1307639092" disabled value=3D"An automatic backup that happens when we add =
+a file." id=3D"group_1307639092_2" role=3D"radio" class=3D"ss-q-radio" aria=
+-label=3D"An automatic backup that happens when we add a file." aria-requir=
+ed=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">An automatic backup that happens=
+ when we add a file.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1307639092" disabled value=3D"A comment we have to write every time we save=
+ a file." id=3D"group_1307639092_3" role=3D"radio" class=3D"ss-q-radio" ari=
+a-label=3D"A comment we have to write every time we save a file." aria-requ=
+ired=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A comment we have to write every=
+ time we save a file.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1296953387" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is a branch in Git?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is a branch=
+ in Git?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=
+=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em=
+;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+253893521" disabled value=3D"A wooden stick where we put the commits" id=3D=
+"group_253893521_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A woo=
+den stick where we put the commits" aria-required=3D"true" style=3D""></spa=
+n>
+<span class=3D"ss-choice-label" style=3D"">A wooden stick where we put the =
+commits</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+253893521" disabled value=3D"A different repository" id=3D"group_253893521_=
+2" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A different repository=
+" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A different repository</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+253893521" disabled checked value=3D"Is a copy of the code from the master =
+branch" id=3D"group_253893521_3" role=3D"radio" class=3D"ss-q-radio" aria-l=
+abel=3D"Is a copy of the code from the master branch" aria-required=3D"true=
+" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Is a copy of the code from the m=
+aster branch</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1397299358" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Why should we use branches?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Why should we us=
+e branches?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li cla=
+ss=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5=
+em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1966922993" disabled value=3D"Because it is the only way to share code betw=
+een coworkers" id=3D"group_1966922993_1" role=3D"radio" class=3D"ss-q-radio=
+" aria-label=3D"Because it is the only way to share code between coworkers"=
+ aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Because it is the only way to sh=
+are code between coworkers</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1966922993" disabled checked value=3D"Because we can work on other things w=
+ithout breaking the stable code" id=3D"group_1966922993_2" role=3D"radio" c=
+lass=3D"ss-q-radio" aria-label=3D"Because we can work on other things witho=
+ut breaking the stable code" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Because we can work on other thi=
+ngs without breaking the stable code</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1966922993" disabled value=3D"Because we need to commit the code" id=3D"gro=
+up_1966922993_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"Because =
+we need to commit the code" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Because we need to commit the co=
+de</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_101965645" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">Git is the same as Github
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Git is the same =
+as Github  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=
+=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em=
+;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1088901946" disabled value=3D"True" id=3D"group_1088901946_1" role=3D"radio=
+" class=3D"ss-q-radio" aria-label=3D"True" aria-required=3D"true" style=3D"=
+"></span>
+<span class=3D"ss-choice-label" style=3D"">True</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1088901946" disabled checked value=3D"False" id=3D"group_1088901946_2" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"False" aria-required=3D"true"=
+ style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">False</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_2014405531" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is the difference between Git and Github
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is the diff=
+erence between Git and Github  " style=3D"list-style:none;padding:0;margin:=
+.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em=
+;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2117884099" disabled value=3D"There is no difference" id=3D"group_211788409=
+9_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"There is no differen=
+ce" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">There is no difference</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2117884099" disabled value=3D"Git is where we put our files, Github is wher=
+e we share them" id=3D"group_2117884099_2" role=3D"radio" class=3D"ss-q-rad=
+io" aria-label=3D"Git is where we put our files, Github is where we share t=
+hem" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Git is where we put our files, G=
+ithub is where we share them</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+2117884099" disabled checked value=3D"Git is the version control system and=
+ Github is a remote version control website" id=3D"group_2117884099_3" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"Git is the version control sy=
+stem and Github is a remote version control website" aria-required=3D"true"=
+ style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">Git is the version control syste=
+m and Github is a remote version control website</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_2037277385" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is Github Desktop (GD)?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is Github D=
+esktop (GD)?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li cl=
+ass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.=
+5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1964366890" disabled value=3D"GD is the only way to work with Git" id=3D"gr=
+oup_1964366890_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"GD is t=
+he only way to work with Git" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">GD is the only way to work with =
+Git</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1964366890" disabled checked value=3D"GD is a Git client to work with Git +=
+ Github Visualy" id=3D"group_1964366890_2" role=3D"radio" class=3D"ss-q-rad=
+io" aria-label=3D"GD is a Git client to work with Git + Github Visualy" ari=
+a-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">GD is a Git client to work with =
+Git + Github Visualy</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1964366890" disabled value=3D"GD is a version control system" id=3D"group_1=
+964366890_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"GD is a vers=
+ion control system" aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">GD is a version control system</=
+span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1374273291" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">HTML is a programming language
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"HTML is a progra=
+mming language  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1816553942" disabled value=3D"True" id=3D"group_1816553942_1" role=3D"radio=
+" class=3D"ss-q-radio" aria-label=3D"True" aria-required=3D"true" style=3D"=
+"></span>
+<span class=3D"ss-choice-label" style=3D"">True</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1816553942" disabled checked value=3D"False" id=3D"group_1816553942_2" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"False" aria-required=3D"true"=
+ style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">False</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_277012906" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">CSS is a programming language
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"CSS is a program=
+ming language  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li c=
+lass=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:=
+.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+643095394" disabled value=3D"True" id=3D"group_643095394_1" role=3D"radio" =
+class=3D"ss-q-radio" aria-label=3D"True" aria-required=3D"true" style=3D"">=
+</span>
+<span class=3D"ss-choice-label" style=3D"">True</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+643095394" disabled checked value=3D"False" id=3D"group_643095394_2" role=
+=3D"radio" class=3D"ss-q-radio" aria-label=3D"False" aria-required=3D"true"=
+ style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">False</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_219983886" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">What is HTML for?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is HTML for=
+?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-c=
+hoice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1636333353" disabled value=3D"HTML tells the browser how the elements look.=
+" id=3D"group_1636333353_1" role=3D"radio" class=3D"ss-q-radio" aria-label=
+=3D"HTML tells the browser how the elements look." aria-required=3D"true" s=
+tyle=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">HTML tells the browser how the e=
+lements look.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1636333353" disabled value=3D"HTML tells the user how the elements look." i=
+d=3D"group_1636333353_2" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"=
+HTML tells the user how the elements look." aria-required=3D"true" style=3D=
+""></span>
+<span class=3D"ss-choice-label" style=3D"">HTML tells the user how the elem=
+ents look.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1636333353" disabled checked value=3D"HTML tells the browser what the eleme=
+nts are." id=3D"group_1636333353_3" role=3D"radio" class=3D"ss-q-radio" ari=
+a-label=3D"HTML tells the browser what the elements are." aria-required=3D"=
+true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">HTML tells the browser what the =
+elements are.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_440418217" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">What is CSS for?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is CSS for?=
+  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-ch=
+oice-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+81453208" disabled value=3D"CSS tells the browser what the elements are." i=
+d=3D"group_81453208_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"CS=
+S tells the browser what the elements are." aria-required=3D"true" style=3D=
+""></span>
+<span class=3D"ss-choice-label" style=3D"">CSS tells the browser what the e=
+lements are.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+81453208" disabled checked value=3D"CSS tells the browser how the elements =
+look." id=3D"group_81453208_2" role=3D"radio" class=3D"ss-q-radio" aria-lab=
+el=3D"CSS tells the browser how the elements look." aria-required=3D"true" =
+style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">CSS tells the browser how the el=
+ements look.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+81453208" disabled value=3D"CSS tells the browser how the elements behave."=
+ id=3D"group_81453208_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"=
+CSS tells the browser how the elements behave." aria-required=3D"true" styl=
+e=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">CSS tells the browser how the el=
+ements behave.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1878864846" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Can I change the color of the elements using HTML?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Can I change the=
+ color of the elements using HTML?  " style=3D"list-style:none;padding:0;ma=
+rgin:.5em 0 0;"><li class=3D"ss-choice-item" style=3D"margin:0;line-height:=
+1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+305348112" disabled value=3D"Yes" id=3D"group_305348112_1" role=3D"radio" c=
+lass=3D"ss-q-radio" aria-label=3D"Yes" aria-required=3D"true" style=3D""></=
+span>
+<span class=3D"ss-choice-label" style=3D"">Yes</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+305348112" disabled checked value=3D"No" id=3D"group_305348112_2" role=3D"r=
+adio" class=3D"ss-q-radio" aria-label=3D"No" aria-required=3D"true" style=
+=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">No</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1839472226" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">Can I create a link using CSS?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"Can I create a l=
+ink using CSS?  " style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li =
+class=3D"ss-choice-item" style=3D"margin:0;line-height:1.3em;padding-bottom=
+:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1731568401" disabled value=3D"Yes" id=3D"group_1731568401_1" role=3D"radio"=
+ class=3D"ss-q-radio" aria-label=3D"Yes" aria-required=3D"true" style=3D"">=
+</span>
+<span class=3D"ss-choice-label" style=3D"">Yes</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1731568401" disabled checked value=3D"No" id=3D"group_1731568401_2" role=3D=
+"radio" class=3D"ss-q-radio" aria-label=3D"No" aria-required=3D"true" style=
+=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">No</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_194477813" style=3D""><div cl=
+ass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83em=
+;margin-bottom:.83em;">What is HTML?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is HTML?  "=
+ style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choic=
+e-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1545061547" disabled checked value=3D"A markup language." id=3D"group_15450=
+61547_1" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A markup languag=
+e." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A markup language.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1545061547" disabled value=3D"A style language." id=3D"group_1545061547_2" =
+role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A style language." aria-r=
+equired=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A style language.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+1545061547" disabled value=3D"A programming language." id=3D"group_15450615=
+47_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A programming langu=
+age." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A programming language.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-radio" style=3D"marg=
+in:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;verti=
+cal-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1411341582" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">What is CSS?
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+
+<ul class=3D"ss-choices" role=3D"radiogroup" aria-label=3D"What is CSS?  " =
+style=3D"list-style:none;padding:0;margin:.5em 0 0;"><li class=3D"ss-choice=
+-item" style=3D"margin:0;line-height:1.3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+824621206" disabled value=3D"A markup language." id=3D"group_824621206_1" r=
+ole=3D"radio" class=3D"ss-q-radio" aria-label=3D"A markup language." aria-r=
+equired=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A markup language.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+824621206" disabled checked value=3D"A styling language." id=3D"group_82462=
+1206_2" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A styling languag=
+e." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A styling language.</span>
+</label></li> <li class=3D"ss-choice-item" style=3D"margin:0;line-height:1.=
+3em;padding-bottom:.5em;">
+<label><span class=3D"ss-choice-item-control goog-inline-block" style=3D"po=
+sition:relative;display:inline-block;"><input type=3D"radio" name=3D"entry.=
+824621206" disabled value=3D"A programming language." id=3D"group_824621206=
+_3" role=3D"radio" class=3D"ss-q-radio" aria-label=3D"A programming languag=
+e." aria-required=3D"true" style=3D""></span>
+<span class=3D"ss-choice-label" style=3D"">A programming language.</span>
+</label></li></ul>
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item  ss-paragraph-text" style=3D"margin:12px=
+ 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertical-ali=
+gn:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1410828419" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">=EC=98=A4=EB=8A=98 =EA=B3=BC=EC=A0=9C=EB=8A=94 =EC=
+=96=B4=EB=96=A0=EC=85=A8=EB=82=98=EC=9A=94? =ED=94=BC=EB=93=9C=EB=B0=B1 =EB=
+=B6=80=ED=83=81=EB=93=9C=EB=A0=A4=EC=9A=94!
+</div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">On first question,  I need vsc that make my code pretty bu=
+t it&#39;s not necessary becauese website is just text That&#39;s why you c=
+an code it with a memo pad. right?=20
+I mean ... I don&#39;t think that&#39;s what the question says...so..i don&=
+#39;t know what to choose but the question says &#39;Do u need vsc to make =
+website&#39; and then i say YES!!!!!!!!!My code is ugly so i need vsc hahah=
+ahahahah....
+oh by the way , I need more information about local version control, remote=
+ version control</div>
+
+
+</div></div></div>
+<br> <div class=3D"ss-form-question errorbox-good" role=3D"listitem" style=
+=3D"">
+<div dir=3D"auto" class=3D"ss-item ss-item-required ss-text" style=3D"margi=
+n:12px 0;"><div class=3D"ss-form-entry" style=3D"margin-bottom:1.5em;vertic=
+al-align:middle;margin-left:0;margin-top:0;max-width:100%;">
+<label class=3D"ss-q-item-label" for=3D"entry_1900229053" style=3D""><div c=
+lass=3D"ss-q-title" style=3D"display:block;font-weight:bold;margin-top:.83e=
+m;margin-bottom:.83em;">_DONT_TOUCH_
+<label for=3D"itemView.getDomIdToLabel()" aria-label=3D"(=ED=95=84=EC=88=98=
+ =EC=9E=85=EB=A0=A5=EB=9E=80)" style=3D""></label>
+<span class=3D"ss-required-asterisk" aria-hidden=3D"true" style=3D"color:#c=
+43b1d;">*</span></div>
+<div class=3D"ss-q-help ss-secondary-text" dir=3D"auto" style=3D"display:bl=
+ock;margin:.1em 0 .25em 0;color:#666;"></div></label>
+
+<div class=3D"ss-q-text" dir=3D"auto" style=3D"background-color:#eee;max-wi=
+dth:90%;border:1px solid #c0c0c0;padding:5px;white-space:pre-wrap;color:#54=
+5454;width:70%;">MTg3MjgwMEAwMDEwMEAwMDE=3D</div>
+
+
+</div></div></div>
+<br></form></div></div></td></tr><tr height=3D"24px"></tr></tbody></table><=
+/div><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"m=
+ax-width: 672px; min-width: 154px;" width=3D"100%" role=3D"presentation"><t=
+body><tr height=3D"24px"><td></td></tr><tr><td><a href=3D"https://docs.goog=
+le.com/forms?usp=3Dmail_form_link" style=3D"color: #424242; font-size: 13px=
+;">=EB=82=98=EB=A7=8C=EC=9D=98 Google =EC=84=A4=EB=AC=B8=EC=A7=80 =EB=A7=8C=
+=EB=93=A4=EA=B8=B0</a></td></tr></tbody></table></div></body></html>
+--000000000000bfc2ef059e2eb732--
