@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="author" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSs states</title>
-    <style>
-      .box{
-        background-color: red;
-        font-size: 40px;
-      }
-      .box:hover{
-        background-color: pink;
-      }
-      .box:active{
-        background-color: green;
-      }
-      .box:focus{
-        background-color: blue;
-      }
-    </style>
-  </head>
-  <body>
-    <textarea class="box">lalalalalala</textarea>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS states</title>
+  <style>
+    .box {
+      background-color: red;
+      font-size: 40px;
+    }
+
+    .box:hover {
+      /* 무언가가 올라가면 바뀜 */
+      background-color: pink;
+    }
+
+    .box:active {
+      /* 클릭할때마다 색상이 변함 */
+      background-color: green;
+    }
+
+    .box:focus {
+      /* 강조해줌 */
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea class="box">lalalalalala</textarea>
+</body>
+
 </html>
