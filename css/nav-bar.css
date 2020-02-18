@@ -8,6 +8,7 @@
     bottom: 0px;
     border: 1px solid #f7f7f7;
 }
+/* 포지션을 고정하기위해서는 width와 height가 필요함 */
 
 .nav .nav__list{
     display: flex;
