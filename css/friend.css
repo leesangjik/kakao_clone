@@ -1,3 +1,8 @@
+#friend > .header__wrapper{
+    background-color: red;
+}
+
+
 .friend{
     display: flex;
     justify-content: space-between;
@@ -5,7 +10,8 @@
 }
 
 .friend .friend__avatar{
-    width: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 38%;
 }
 
@@ -46,6 +52,20 @@
     font-size: 12px;
 }
 
+
+.friend .chat__chatnum{
+    margin-top: 5px;
+    margin-left: 25px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #020202;
+}
+
 .friend .freind__now-listening{
     border: 2px solid #52e084;
     padding: 5px 10px;
@@ -70,3 +90,6 @@
     border-radius: 5px;
 }
 
+ul > li {
+    margin-bottom: 15px;
+}

@@ -1,10 +1,15 @@
 .status-bar{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
     position: fixed;
+    padding-top: 10px;
+    padding-right: 35px;
+    z-index: 1;
     width: 100%;
-    opacity: 0.7;
+    height: 40px;
+    opacity: 1;
+    background-color: white;
+    
 }
 
 .status-bar i {
