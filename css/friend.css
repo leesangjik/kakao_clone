@@ -139,14 +139,14 @@ li:nth-child(5) > div > div > .s-avatar{
 
 li:nth-child(5) > div > div > .s-avatar > .icons-box:first-child{
     position: absolute;
-    left: 5px;
-    top: 5px;
+    left: 7px;
+    top: 7px;
 }
 
 li:nth-child(5) > div > div > .s-avatar > .icons-box:last-child{
     position: absolute;
-    right: 8px;
-    bottom: 8px;
+    right: 7px;
+    bottom: 11px;
 }
 
 li:nth-child(5) > div > div > .s-avatar > .icons-box:last-child > img{
