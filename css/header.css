@@ -26,3 +26,27 @@
     font-size: 22px;
     margin-right: 20px;
 }
+
+.header .fa-comments,
+.header .fa-comment,
+.header .fa-plus,
+.header .fa-music{
+    opacity: 0.7;
+}
+
+.header__header-column .header__icon:nth-child(2){
+    position: relative;
+    
+}
+
+
+.fa-plus{
+    position: absolute;
+    font-size: 16px;
+    top: 6px;  
+    right: 6.5px;
+}
+
+.fa-comment-alt{
+    cursor: pointer;
+}

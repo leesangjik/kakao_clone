@@ -21,7 +21,7 @@
 
 .chats-body{
     background-image: url("../images/y-so-serious-white.png");
-    min-height: 100vh;
+    min-height: 150vh;
 }
 
 .chat__write--container{
@@ -151,8 +151,9 @@
 }
 
 .incoming-message img{
-    width: 40px;
-    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 25px;
     margin-right: 15px;
     box-shadow:  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px,
     rgba(0, 0, 0, 0.024) 0px -6px 16px -6px;
