@@ -91,5 +91,64 @@
 }
 
 ul > li {
-    margin-bottom: 15px;
+    margin-bottom: 21px;
+}
+
+ul > li:nth-child(2) > .friend{
+    cursor: not-allowed;
+}
+
+.s-avatar{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 38%;
+}
+
+.icons-box{
+    margin: 2.5px;
+    width: 25px;
+    height: 25px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.icons-box > i{
+    color: black;
+   
+}
+
+li:nth-child(4) > div > div >  .s-avatar{
+    flex-wrap: wrap-reverse;
+}
+.small-avatar{
+    width: inherit;
+    height: inherit;
+    border-radius: 6px;
+}
+
+li:nth-child(5) > div > div > .s-avatar{
+    position: relative;
+}
+
+li:nth-child(5) > div > div > .s-avatar > .icons-box:first-child{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+li:nth-child(5) > div > div > .s-avatar > .icons-box:last-child{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+}
+
+li:nth-child(5) > div > div > .s-avatar > .icons-box:last-child > img{
+    border: 2px solid white;
 }
