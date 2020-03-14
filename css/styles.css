@@ -10,7 +10,8 @@
 @import "settings.css";
 @import "chat.css";
 @import "mobile.css";
-@import "find_nav.css";
+@import "find_search.css";
+
 
 *{
     box-sizing: border-box;
