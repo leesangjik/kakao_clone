@@ -10,6 +10,9 @@
 @import "settings.css";
 @import "chat.css";
 @import "mobile.css";
+@import "find_friend.css";
+@import "ad.css";
+
 
 *{
     box-sizing: border-box;

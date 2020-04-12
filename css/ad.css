@@ -1,0 +1,53 @@
+.ad-container{
+    position: relative;
+    margin: auto;
+}
+
+.ad__slide{
+    width: 300px;
+    height: 100px;
+    display: none;
+    margin: auto;
+}
+
+.ad__slide > img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.slidetext {
+    position: absolute;
+    color: grey;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 12px;
+    top: 0;
+}
+
+.dot{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+.slide{
+    animation: fade 1.5s ;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0.4;
+    }
+    to{
+        opacity: 1;
+    }
+}
