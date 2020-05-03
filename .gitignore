@@ -1,0 +1,5 @@
+.DS_Store
+# commit 된 폴더 없애는 명령어
+# git rm --cached (폴더명)/ -r
+
+kakao_quiz/
